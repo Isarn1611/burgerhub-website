@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/card.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/receipt.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="flex items-center justify-between px-10 py-3 bg-white shadow-sm">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+
+                <!-- Circle Logo -->
+                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">B</span>
+                </div>
+
+                <!-- Brand Name -->
+                <span class="text-xl font-bold text-gray-800">
+                    BurgerHub
+                </span>
+
+            </div>
+
+            <!-- cart -->
+            <ul class="flex items-center gap-10 text-gray-600 font-medium">
+
+                <li class="hover:text-black">
+                <a href="index.html">Home</a>
+                </li>
+
+                <li class="hover:text-black">
+                <a href="menu.html">Menu</a>
+                </li>
+
+                <li class="hover:text-black">
+                <a href="service.html">Service</a>
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+            <div class="flex items-center gap-6">
+
+                <!-- Cart Active -->
+                <a href="cart.html" class="relative cursor-pointer">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7 text-gray-700 hover:text-black"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                        <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4
+                        M7 13L5.4 5M7 13l-2 4h12"/>
+
+                    </svg>
+
+                    <!-- BADGE -->
+                    <span id="cart-badge"
+                    class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full hidden">
+                        0
+                    </span>
+
+                </a>
+
+                <!-- Divider -->
+                <div class="w-px h-6 bg-gray-300"></div>
+
+                <!-- Sign In -->
+                <a href="signin.html">
+                    <button class="bg-black text-white text-sm px-4 py-1.5 rounded-full hover:bg-gray-800">
+                    Sign In
+                    </button>
+                </a>
+
+            </div>
+
+        </nav>
+        
+    </header>
+
+    <div class="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-12 mt-16">
+
+        <!-- LEFT THANKYOU -->
+        <div class="bg-yellow-400 rounded-3xl flex items-center justify-center text-center">
+
+            <div>
+                <h1 class="text-6xl font-bold text-white">Thank you</h1>
+                <p class="text-3xl mt-4">Enjoy Your Meal</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT RECEIPT -->
+        <div id="receipt" class="bg-white rounded-2xl shadow p-6 w-[320px]">
+
+            <h1 class="text-2xl font-bold text-center">BurgerHub</h1>
+
+            <hr class="my-3">
+
+            <p class="text-center text-sm">
+                Order #<span id="order-id"></span>
+            </p>
+
+            <hr class="my-3">
+
+            <div id="receipt-items" class="space-y-2"></div>
+
+            <hr class="my-3">
+
+            <div class="flex justify-between text-sm">
+                <span>Total</span>
+                <span>$ <span id="total"></span></span>
+            </div>
+
+            <div class="text-xs text-gray-500 mt-2 flex justify-between">
+                <span>Amount not include vat</span>
+                <span>$ <span id="subtotal"></span></span>
+            </div>
+
+            <div class="text-xs text-gray-500 flex justify-between">
+                <span>VAT (7%)</span>
+                <span>$ <span id="vat"></span></span>
+            </div>
+
+            <hr class="my-3">
+
+            <div class="flex justify-between text-sm">
+                <span>Payment</span>
+                <span id="payment-method"></span>
+            </div>
+
+            <button onclick="window.print()"
+                class="w-full mt-6 bg-black text-white py-4 rounded-full flex justify-center gap-3">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 20 17"
+                stroke="currentColor">
+
+                <path stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 16v-8m0 8l-3-3m3 3l3-3"/>
+
+                </svg>
+
+                Save
+
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

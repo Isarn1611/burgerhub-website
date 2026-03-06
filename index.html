@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/card.js" defer></script>
+    <script src="js/cart.js" defer></script>
+</head>
+<body class="overflow-x-hidden">
+    <header>
+        <nav class="flex items-center justify-between px-10 py-3 bg-white shadow-sm">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+
+                <!-- Circle Logo -->
+                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">B</span>
+                </div>
+
+                <!-- Brand Name -->
+                <span class="text-xl font-bold text-gray-800">
+                    BurgerHub
+                </span>
+
+            </div>
+
+            <!-- Home -->
+            <ul class="flex items-center gap-10 text-gray-600 font-medium">
+
+                <li class="relative text-black">
+                Home
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-red-500"></span>
+                </li>
+
+                <li class="hover:text-black">
+                <a href="menu.html">Menu</a>
+                </li>
+
+                <li class="hover:text-black">
+                <a href="service.html">Service</a>
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+            <div class="flex items-center gap-6">
+
+                <!-- Cart -->
+                <a href="cart.html" class="relative cursor-pointer">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7 text-gray-700 hover:text-black"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                        <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4
+                        M7 13L5.4 5M7 13l-2 4h12"/>
+
+                    </svg>
+
+                    <!-- BADGE -->
+                    <span id="cart-badge"
+                    class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full hidden">
+                        0
+                    </span>
+
+                </a>
+
+                <!-- Divider -->
+                <div class="w-px h-6 bg-gray-300"></div>
+
+                <!-- Sign In -->
+                <a href="signin.html">
+                    <button class="bg-black text-white text-sm px-4 py-1.5 rounded-full hover:bg-gray-800">
+                    Sign In
+                    </button>
+                </a>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="relative h-[calc(100vh-64px)] flex items-center">
+
+        <!-- Background image (PUT YOUR BACKGROUND IMAGE HERE) -->
+        <div class="absolute inset-0">
+            <!-- Replace this image with your red background banner -->
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/5f/48/04/smashed-patty-burger.jpg?w=900&h=500&s=1"
+                class="w-full h-full object-cover"
+                alt="Hero Background">
+        </div>
+
+        <!-- Dark overlay for better text visibility -->
+        <div class="absolute inset-0 bg-black/30"></div>
+
+        <!-- Content container -->
+        <div class="relative max-w-9xl mx-auto px-10 pl-40 w-full flex items-center justify-between">
+
+            <!-- LEFT SIDE TEXT -->
+            <div class="text-white max-w-lg">
+
+                <!-- Small promotion text -->
+                <p class="text-lg mb-3 opacity-80">
+                    Only 129.-
+                </p>
+
+                <!-- Main title -->
+                <h1 class="text-5xl font-bold leading-tight mb-6">
+                    Double Cheese<br>
+                    Beef Burger
+                </h1>
+
+                <!-- Order button -->
+                <a href="menu.html">
+                    <button class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full font-semibold">
+                        Order Now
+                    </button>
+                </a>
+
+                <!-- Small description text -->
+                <p class="text-sm mt-6 opacity-80">
+                    Limited time promotion. Prices may vary by location.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <section class="py-20 bg-gray-100">
+
+        <h2 class="text-3xl font-bold text-center">
+        Most Popular
+        </h2>
+
+        <p class="text-center text-gray-500 mt-2">
+        Discover our customer favorites
+        </p>
+
+        <div id="popular"
+        class="grid grid-cols-3 gap-12 max-w-6xl mx-auto mt-12 justify-items-center">
+        </div>
+
+    </section>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // update badge
+            updateCartBadge()
+
+            // render popular menu
+            const container = document.getElementById("popular")
+
+            products
+                .filter(product => product.popular)
+                .forEach(product => {
+                    container.innerHTML += createCard(product)
+                })
+
+        })
+
+    </script>
+
+</html>

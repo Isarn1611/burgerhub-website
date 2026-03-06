@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/card.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/menu.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="flex items-center justify-between px-10 py-3 bg-white shadow-sm">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+
+                <!-- Circle Logo -->
+                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">B</span>
+                </div>
+
+                <!-- Brand Name -->
+                <span class="text-xl font-bold text-gray-800">
+                    BurgerHub
+                </span>
+
+            </div>
+
+            <!-- Menu -->
+            <ul class="flex items-center gap-10 text-gray-600 font-medium">
+
+                <li class="hover:text-black">
+                <a href="index.html">Home</a>
+                </li>
+
+                <li class="relative text-black">
+                Menu
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-red-500"></span>
+                </li>
+
+                <li class="hover:text-black">
+                <a href="service.html">Service</a>
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+            <div class="flex items-center gap-6">
+
+                <!-- Cart -->
+                <a href="cart.html" class="relative cursor-pointer">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7 text-gray-700 hover:text-black"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                        <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4
+                        M7 13L5.4 5M7 13l-2 4h12"/>
+
+                    </svg>
+
+                    <!-- BADGE -->
+                    <span id="cart-badge"
+                    class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full hidden">
+                        0
+                    </span>
+
+                </a>
+
+                <!-- Divider -->
+                <div class="w-px h-6 bg-gray-300"></div>
+
+                <!-- Sign In -->
+                <a href="signin.html">
+                    <button class="bg-black text-white text-sm px-4 py-1.5 rounded-full hover:bg-gray-800">
+                    Sign In
+                    </button>
+                </a>
+
+            </div>
+
+        </nav>
+        <script>updateCartBadge()</script>
+    </header>
+
+    <div class="flex max-w-7xl mx-auto mt-10 gap-10">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="w-64 flex flex-col">
+
+            <!-- logo stripe -->
+            <div class="flex mb-4">
+                <div class="w-6 h-12 bg-yellow-400"></div>
+                <div class="w-6 h-12 bg-red-600"></div>
+                <div class="w-6 h-12 bg-yellow-400"></div>
+            </div>
+
+            <h2 class="font-bold text-2xl mb-8">MENU</h2>
+
+            <div class="w-full space-y-6">
+
+                <!-- Combo Set ACTIVE -->
+                <button onclick="filterMenu('combo'); setActive(this)" class="menu-btn">
+
+                    <!-- burger icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-paper-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 3h8a2 2 0 0 1 2 2v1.82a5 5 0 0 0 .528 2.236l.944 1.888a5 5 0 0 1 .528 2.236v5.82a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-5.82a5 5 0 0 1 .528 -2.236l1.472 -2.944v-3a2 2 0 0 1 2 -2" /><path d="M12 15a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M6 21a2 2 0 0 0 2 -2v-5.82a5 5 0 0 0 -.528 -2.236l-1.472 -2.944" /><path d="M11 7h2" /></svg>
+
+                    Combo Set
+
+                </button>
+
+
+                <!-- Burger -->
+                <button onclick="filterMenu('burger'); setActive(this)" class="menu-btn">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-burger"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 15h16a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4" /><path d="M12 4c3.783 0 6.953 2.133 7.786 5h-15.572c.833 -2.867 4.003 -5 7.786 -5" /><path d="M5 12h14" /></svg>
+
+                    Burger
+
+                </button>
+
+
+                <!-- Drink -->
+                <button onclick="filterMenu('drink'); setActive(this)" class="menu-btn">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-cup"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11h14v-3h-14l0 3" /><path d="M17.5 11l-1.5 10h-8l-1.5 -10" /><path d="M6 8v-1a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v1" /><path d="M15 5v-2" /></svg>
+
+                    Drink
+
+                </button>
+
+
+                <!-- Snacks -->
+                <button onclick="filterMenu('snacks'); setActive(this)" class="menu-btn">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-popcorn-icon lucide-popcorn"><path d="M18 8a2 2 0 0 0 0-4 2 2 0 0 0-4 0 2 2 0 0 0-4 0 2 2 0 0 0-4 0 2 2 0 0 0 0 4"/><path d="M10 22 9 8"/><path d="m14 22 1-14"/><path d="M20 8c.5 0 .9.4.8 1l-2.6 12c-.1.5-.7 1-1.2 1H7c-.6 0-1.1-.4-1.2-1L3.2 9c-.1-.6.3-1 .8-1Z"/></svg>
+
+                    Snacks
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- DIVIDER -->
+        <div class="w-px bg-gray-300"></div>
+
+
+        <!-- PRODUCT GRID -->
+        <main class="flex-1">
+
+            <div id="menu-grid"
+            class="grid grid-cols-3 gap-10">
+
+            </div>
+
+        </main>
+
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            updateCartBadge()
+        })
+    </script>
+    
+</body>
+</html>

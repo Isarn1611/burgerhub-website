@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/card.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="flex items-center justify-between px-10 py-3 bg-white shadow-sm">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+
+                <!-- Circle Logo -->
+                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">B</span>
+                </div>
+
+                <!-- Brand Name -->
+                <span class="text-xl font-bold text-gray-800">
+                    BurgerHub
+                </span>
+
+            </div>
+
+            <!-- Service -->
+            <ul class="flex items-center gap-10 text-gray-600 font-medium">
+
+                <li class="hover:text-black">
+                <a href="index.html">Home</a>
+                </li>
+
+                <li class="hover:text-black">
+                <a href="menu.html">Menu</a>
+                </li>
+
+                <li class="relative text-black">
+                Service
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-red-500"></span>
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+            <div class="flex items-center gap-6">
+
+                <!-- Cart -->
+                <a href="cart.html" class="relative cursor-pointer">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7 text-gray-700 hover:text-black"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                        <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4
+                        M7 13L5.4 5M7 13l-2 4h12"/>
+
+                    </svg>
+
+                    <!-- BADGE -->
+                    <span id="cart-badge"
+                    class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full hidden">
+                        0
+                    </span>
+
+                </a>
+
+                <!-- Divider -->
+                <div class="w-px h-6 bg-gray-300"></div>
+
+                <!-- Sign In -->
+                <a href="signin.html">
+                    <button class="bg-black text-white text-sm px-4 py-1.5 rounded-full hover:bg-gray-800">
+                    Sign In
+                    </button>
+                </a>
+                
+
+            </div>
+
+        </nav>
+        <script>updateCartBadge()</script>
+    </header>
+</body>
+</html>
