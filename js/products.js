@@ -5,16 +5,24 @@ const products = [
 {
 id:1,
 name:"Classic Combo",
-price:12.99,
-image:"images/combo1.png",
+price:159.50,
+image:"img/Classic Combo.png",
 category:"combo",
 },
 
 {
 id:2,
 name:"Double Burger Combo",
-price:14.99,
-image:"images/combo2.png",
+price:199.50,
+image:"img/Double Burger Combo.png",
+category:"combo"
+},
+
+{
+id:3,
+name:"Big Pack Combo",
+price:219.50,
+image:"img/Big Pack Combo.png",
 category:"combo"
 },
 
@@ -22,28 +30,28 @@ category:"combo"
 /* BURGER */
 
 {
-id:3,
-name:"Classic Beef Burger",
-price:5.99,
-image:"images/burger1.png",
-category:"burger",
-popular:true
-},
-
-{
 id:4,
-name:"Double Bacon Burger",
-price:7.99,
-image:"images/burger2.png",
+name:"Classic Beef Burger",
+price:129.25,
+image:"img/Classic Beef Burger.png",
 category:"burger",
 popular:true
 },
 
 {
 id:5,
+name:"Double Bacon Burger",
+price:149.25,
+image:"img/Double Bacon Burger.png",
+category:"burger",
+popular:true
+},
+
+{
+id:6,
 name:"Chicken Burger",
-price:6.49,
-image:"images/burger3.png",
+price:119.25,
+image:"img/Chicken Burger.png",
 category:"burger",
 popular:true
 },
@@ -52,26 +60,26 @@ popular:true
 /* DRINK */
 
 {
-id:6,
-name:"Coca Cola",
-price:1.99,
-image:"images/coke.png",
-category:"drink"
-},
-
-{
 id:7,
-name:"Orange Juice",
-price:2.49,
-image:"images/orange.png",
+name:"Coca Cola",
+price:49.25,
+image:"img/Coca Cola.png",
 category:"drink"
 },
 
 {
 id:8,
+name:"Orange Juice",
+price:49.25,
+image:"img/Orange Juice.png",
+category:"drink"
+},
+
+{
+id:9,
 name:"Milkshake",
-price:3.49,
-image:"images/milkshake.png",
+price:69.25,
+image:"img/Milkshake.png",
 category:"drink"
 },
 
@@ -79,26 +87,26 @@ category:"drink"
 /* SNACKS */
 
 {
-id:9,
-name:"French Fries",
-price:2.99,
-image:"images/fries.png",
-category:"snacks"
-},
-
-{
 id:10,
-name:"Chicken Nuggets",
-price:3.99,
-image:"images/nuggets.png",
+name:"French Fries",
+price:69.50,
+image:"img/French Fries.png",
 category:"snacks"
 },
 
 {
 id:11,
+name:"Chicken Nuggets",
+price:79.25,
+image:"img/Chicken Nuggets.png",
+category:"snacks"
+},
+
+{
+id:12,
 name:"Onion Rings",
-price:3.49,
-image:"images/onion.png",
+price:69.25,
+image:"img/Onion Rings.png",
 category:"snacks"
 }
 

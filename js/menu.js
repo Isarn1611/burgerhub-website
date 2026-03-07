@@ -12,6 +12,18 @@ grid.innerHTML += createCard(product)
 
 }
 
+function renderAllMenu(){
+
+const grid = document.getElementById("menu-grid")
+
+grid.innerHTML = ""
+
+products.forEach(product => {
+grid.innerHTML += createCard(product)
+})
+
+}
+
 function setActive(button){
 
 document.querySelectorAll(".menu-btn")
@@ -23,7 +35,7 @@ button.classList.add("active")
 
 document.addEventListener("DOMContentLoaded", () => {
 
-filterMenu("combo")
+renderAllMenu()
 
 updateCartBadge()
 

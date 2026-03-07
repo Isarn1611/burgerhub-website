@@ -29,7 +29,7 @@ const box = document.getElementById("payment-info")
 if(method === "Promptpay"){
 box.innerHTML = `
 <div class="text-center">
-<img src="images/promptpay.png" class="w-32 mx-auto mb-3">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1yVPMpUmn2dDPz8jzd2wDYTX3K-UN6lJ5Rw&s" class="w-32 mx-auto mb-3">
 <p>Scan QR to pay</p>
 </div>`
 }

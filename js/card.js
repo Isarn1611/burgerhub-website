@@ -6,7 +6,7 @@ return `
     <!-- IMAGE -->
     <div class="flex justify-center mb-4">
         <img src="${product.image}" 
-        class="w-44 h-44 object-contain drop-shadow-md">
+        class="w-44 h-44 object-contain">
     </div>
 
     <!-- NAME -->
@@ -45,25 +45,24 @@ return `
         </div>
 
         <!-- ADD BUTTON -->
-        <button onclick="addToCart(${product.id})"
-        class="flex items-center gap-2 bg-red-600 text-white px-6 h-10 rounded-full hover:bg-red-700 transition">
+        <button onclick="addToCart(${product.id}, this)"
+        class="flex items-center gap-2 bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition active:scale-90">
 
-            <svg xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
 
-            <path stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4
-            M7 13L5.4 5M7 13l-2 4h12"/>
+        <path stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M3 3h2l.4 2M7 13h10l4-8H5.4
+        M7 13L5.4 5M7 13l-2 4h12"/>
 
-            </svg>
+        </svg>
 
-            Add
-
+        Add
         </button>
 
     </div>
